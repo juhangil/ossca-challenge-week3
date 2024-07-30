@@ -8,15 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Aliencube.YouTubeSubtitlesExtractor" Version="2.0.0" />
+    <PackageReference Include="Azure.AI.OpenAI" Version="2.0.0-beta.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\YoutubeSummarizer.ServiceDefaults\YoutubeSummarizer.ServiceDefaults.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Impl\" />
   </ItemGroup>
 
 </Project>
