@@ -1,6 +1,9 @@
-@YoutubeSummarizer.Backend_HostAddress = http://localhost:5064
+@hostaddress = http://localhost:5064
 
-GET {{YoutubeSummarizer.Backend_HostAddress}}/weatherforecast/
+GET {{hostaddress}}/weather/
 Accept: application/json
 
 ###
+
+POST {{hostaddress}}/summarize/
+Accept: text/plain
