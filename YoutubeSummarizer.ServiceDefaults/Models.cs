@@ -10,3 +10,12 @@ public class WeatherForecast
 
     public string? Summary { get; set; }
 }
+
+public class SummaryRequest
+{
+    public string? VideoURL { get; set; }
+
+    public string? VideoLanguageCode { get; set; }
+
+    public string? SummaryLanguageCode { get; set; }
+}

@@ -16,7 +16,7 @@ builder.Services.AddRazorComponents()
 
 #region Service Registration
 
-builder.Services.AddHttpClient<IApiClientService, ApiClientService>(client => client.BaseAddress = new Uri(config["BaseURL"]));
+builder.Services.AddHttpClient<IApiClientService, ApiClientService>(client => client.BaseAddress = new Uri(config["BaseURL"]!));
 builder.Services.AddHttpClient<IYouTubeVideo, YouTubeVideo>();
 
 #endregion
