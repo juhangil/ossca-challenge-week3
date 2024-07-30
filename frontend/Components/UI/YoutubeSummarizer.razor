@@ -1,0 +1,32 @@
+﻿@rendermode InteractiveServer
+
+<h3>YoutubeSummarizer</h3>
+
+<input id="youtube-link" @bind=inputURL @bind:after=SetYoutubeEmbedPlayer />
+
+<iframe id="ytplayer" type="text/html" width="640" height="360"
+        src="https://www.youtube.com/embed/aoVOOY2cdP8"
+        frameborder="0"></iframe>
+
+<select id="video-language-code">
+    <option value="en" selected>English</option>
+    <option value="ko">Korean</option>
+</select>
+
+<select id="summary-language-code">
+    <option value="en" selected>English</option>
+    <option value="ko">Korean</option>
+</select>
+
+<button id="summary">Summary</button>
+
+<textarea id="result"></textarea>
+
+@code {
+    private string inputURL = "";
+
+    private void SetYoutubeEmbedPlayer()
+    {
+        
+    }
+}
