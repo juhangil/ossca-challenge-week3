@@ -2,6 +2,7 @@
 @using System.Web
 @using Aliencube.YouTubeSubtitlesExtractor.Abstractions
 
+@inject IApiClientService ApiClient
 @inject IYouTubeVideo youtubeService
 
 <h3>YoutubeSummarizer</h3>
@@ -12,26 +13,30 @@
         src=@youtubePlayerURL
         frameborder="0"></iframe>
 
-<select id="video-language-code">
+<select id="video-language-code" @bind=videoLanguageCode>
     <option value="en" selected>English</option>
     <option value="ko">Korean</option>
 </select>
 
-<select id="summary-language-code">
+<select id="summary-language-code" @bind=summaryLanguageCode>
     <option value="en" selected>English</option>
     <option value="ko">Korean</option>
 </select>
 
-<button id="summary">Summary</button>
+<button id="summary" @onclick=SummarizeAsync>Summary</button>
 
-<textarea id="result"></textarea>
+<textarea id="result" @bind=summaryResult></textarea>
 
 @code {
     private static readonly string YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/";
-    private static readonly string YOUTUBE_EMBED_URL_DEFAULT = "";
+    private static readonly string YOUTUBE_EMBED_URL_DEFAULT = string.Empty;
 
-    private string inputURL = "";
+    private string inputURL = string.Empty;
     private string youtubePlayerURL = YOUTUBE_EMBED_URL_DEFAULT;
+
+    private string videoLanguageCode = "en";
+    private string summaryLanguageCode = "en";
+    private string summaryResult = string.Empty;
 
     private void SetYoutubeEmbedPlayer()
     {
@@ -41,5 +46,18 @@
             youtubePlayerURL = YOUTUBE_EMBED_URL + vidId;
         else
             youtubePlayerURL = YOUTUBE_EMBED_URL_DEFAULT;
+    }
+
+    private async Task SummarizeAsync()
+    {
+        try
+        {
+            var result = await ApiClient.SummarizeAsync(inputURL, videoLanguageCode, summaryLanguageCode);
+            summaryResult = result;
+        }
+        catch (Exception ex)
+        {
+            summaryResult = ex.Message;
+        }
     }
 }
