@@ -24,24 +24,25 @@
 <textarea id="result"></textarea>
 
 @code {
-    private string inputURL = "";
-    private string youtubePlayerURL = "";
     private static readonly string YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/";
+    private static readonly string YOUTUBE_EMBED_URL_DEFAULT = "";
+
+    private string inputURL = "";
+    private string youtubePlayerURL = YOUTUBE_EMBED_URL_DEFAULT;
 
     private void SetYoutubeEmbedPlayer()
     {
-        bool isValid = false;
-        isValid = inputURL.Contains("www.youtube.com/watch?v=");
+        string? vidId = null;
 
-        if (isValid)
+        if (inputURL.Contains("www.youtube.com/watch?v="))
         {
             var uri = new Uri(inputURL);
-            var vidId = System.Web.HttpUtility.ParseQueryString(uri.Query).Get("v");
+            vidId = System.Web.HttpUtility.ParseQueryString(uri.Query).Get("v");
+        }
+
+        if (!String.IsNullOrEmpty(vidId))
             youtubePlayerURL = YOUTUBE_EMBED_URL + vidId;
-        }
         else
-        {
-            youtubePlayerURL = "";
-        }
+            youtubePlayerURL = YOUTUBE_EMBED_URL_DEFAULT;
     }
 }
