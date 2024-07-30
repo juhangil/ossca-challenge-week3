@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSummarizer.AppHost", "YoutubeSummarizer.AppHost\YoutubeSummarizer.AppHost.csproj", "{ADF8E2E9-7C02-44ED-9196-86963A0AC10E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSummarizer.ServiceDefaults", "YoutubeSummarizer.ServiceDefaults\YoutubeSummarizer.ServiceDefaults.csproj", "{77AAB551-BB03-4ED3-9676-3D24AF78046D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADF8E2E9-7C02-44ED-9196-86963A0AC10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF8E2E9-7C02-44ED-9196-86963A0AC10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF8E2E9-7C02-44ED-9196-86963A0AC10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF8E2E9-7C02-44ED-9196-86963A0AC10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AAB551-BB03-4ED3-9676-3D24AF78046D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AAB551-BB03-4ED3-9676-3D24AF78046D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AAB551-BB03-4ED3-9676-3D24AF78046D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AAB551-BB03-4ED3-9676-3D24AF78046D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4491D60-09EE-4025-8443-8145E079F3BF}
+	EndGlobalSection
+EndGlobal
