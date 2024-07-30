@@ -1,6 +1,6 @@
 @hostaddress = http://localhost:5064
 
-GET {{hostaddress}}/weather/
+GET {{hostaddress}}/weatherforecast/
 Accept: application/json
 
 ###
