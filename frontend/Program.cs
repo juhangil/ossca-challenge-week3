@@ -2,6 +2,9 @@ using YoutubeSummarizer.Frontend.Components;
 using YoutubeSummarizer.Frontend.Services;
 using YoutubeSummarizer.Frontend.Services.Impl;
 
+using Aliencube.YouTubeSubtitlesExtractor;
+using Aliencube.YouTubeSubtitlesExtractor.Abstractions;
+
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
 
@@ -14,6 +17,7 @@ builder.Services.AddRazorComponents()
 #region Service Registration
 
 builder.Services.AddHttpClient<IApiClientService, ApiClientService>(client => client.BaseAddress = new Uri(config["BaseURL"]));
+builder.Services.AddHttpClient<IYouTubeVideo, YouTubeVideo>();
 
 #endregion
 

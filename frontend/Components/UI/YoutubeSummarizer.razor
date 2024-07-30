@@ -1,5 +1,8 @@
 ﻿@rendermode InteractiveServer
 @using System.Web
+@using Aliencube.YouTubeSubtitlesExtractor.Abstractions
+
+@inject IYouTubeVideo youtubeService
 
 <h3>YoutubeSummarizer</h3>
 
@@ -32,13 +35,7 @@
 
     private void SetYoutubeEmbedPlayer()
     {
-        string? vidId = null;
-
-        if (inputURL.Contains("www.youtube.com/watch?v="))
-        {
-            var uri = new Uri(inputURL);
-            vidId = System.Web.HttpUtility.ParseQueryString(uri.Query).Get("v");
-        }
+        var vidId = youtubeService.GetVideoId(inputURL);
 
         if (!String.IsNullOrEmpty(vidId))
             youtubePlayerURL = YOUTUBE_EMBED_URL + vidId;
