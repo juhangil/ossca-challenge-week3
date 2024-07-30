@@ -1,8 +1,8 @@
 ﻿using YoutubeSummarizer.Model;
 
-namespace YoutubeSummarizer.Frontend.Client;
+namespace YoutubeSummarizer.Frontend.Services;
 
-internal interface IApiClient
+internal interface IApiClientService
 {
     public Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync();
 }

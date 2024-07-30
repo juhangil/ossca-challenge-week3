@@ -1,6 +1,6 @@
 using YoutubeSummarizer.Frontend.Components;
-using YoutubeSummarizer.Frontend.Client;
-using YoutubeSummarizer.Frontend.Client.Impl;
+using YoutubeSummarizer.Frontend.Services;
+using YoutubeSummarizer.Frontend.Services.Impl;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -13,7 +13,7 @@ builder.Services.AddRazorComponents()
 
 #region Service Registration
 
-builder.Services.AddHttpClient<IApiClient, ApiClient>(client => client.BaseAddress = new Uri(config["BaseURL"]));
+builder.Services.AddHttpClient<IApiClientService, ApiClientService>(client => client.BaseAddress = new Uri(config["BaseURL"]));
 
 #endregion
 

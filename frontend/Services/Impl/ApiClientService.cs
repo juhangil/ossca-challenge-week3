@@ -1,8 +1,8 @@
 ﻿using YoutubeSummarizer.Model;
 
-namespace YoutubeSummarizer.Frontend.Client.Impl;
+namespace YoutubeSummarizer.Frontend.Services.Impl;
 
-public class ApiClient(HttpClient http) : IApiClient
+public class ApiClientService(HttpClient http) : IApiClientService
 {
     private readonly HttpClient _http = http
         ?? throw new ArgumentNullException(nameof(http), Errors.NULL_ERROR);
