@@ -485,5 +485,5 @@ $RECYCLE.BIN/
 
 # ---
 *.bak
-#*/appsettings.Development.json
-#*/appsettings.Production.json
+YoutubeSummarizer.AppHost/appsettings.json
+YoutubeSummarizer.AppHost/appsettings.Development.json
