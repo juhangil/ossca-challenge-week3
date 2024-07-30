@@ -5,7 +5,7 @@ namespace YoutubeSummarizer.Frontend.Client.Impl;
 public class ApiClient(HttpClient http) : IApiClient
 {
     private readonly HttpClient _http = http
-        ?? throw new ArgumentNullException(nameof(http), $"This item cannot be null");
+        ?? throw new ArgumentNullException(nameof(http), Errors.NULL_ERROR);
 
     public async Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync()
     {
