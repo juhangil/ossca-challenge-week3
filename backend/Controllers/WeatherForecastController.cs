@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
+using YoutubeSummarizer.Model;
+
 namespace YoutubeSummarizer.Backend.Controllers;
 
 [ApiController]

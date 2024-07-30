@@ -1,4 +1,4 @@
-namespace YoutubeSummarizer.Backend;
+﻿namespace YoutubeSummarizer.Model;
 
 public class WeatherForecast
 {
