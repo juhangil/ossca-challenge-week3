@@ -1,11 +1,12 @@
 ﻿@rendermode InteractiveServer
+@using System.Web
 
 <h3>YoutubeSummarizer</h3>
 
 <input id="youtube-link" @bind=inputURL @bind:after=SetYoutubeEmbedPlayer />
 
 <iframe id="ytplayer" type="text/html" width="640" height="360"
-        src="https://www.youtube.com/embed/aoVOOY2cdP8"
+        src=@youtubePlayerURL
         frameborder="0"></iframe>
 
 <select id="video-language-code">
@@ -24,9 +25,23 @@
 
 @code {
     private string inputURL = "";
+    private string youtubePlayerURL = "";
+    private static readonly string YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/";
 
     private void SetYoutubeEmbedPlayer()
     {
-        
+        bool isValid = false;
+        isValid = inputURL.Contains("www.youtube.com/watch?v=");
+
+        if (isValid)
+        {
+            var uri = new Uri(inputURL);
+            var vidId = System.Web.HttpUtility.ParseQueryString(uri.Query).Get("v");
+            youtubePlayerURL = YOUTUBE_EMBED_URL + vidId;
+        }
+        else
+        {
+            youtubePlayerURL = "";
+        }
     }
 }
