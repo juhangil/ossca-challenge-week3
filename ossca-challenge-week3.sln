@@ -10,6 +10,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSummarizer.Backend",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeSummarizer.Frontend", "frontend\YoutubeSummarizer.Frontend.csproj", "{62877A56-30D3-4291-9D7B-0C1CFEDEE1F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{C905FC11-E1A0-45D8-B58F-E605F44E0763}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\azure-dev.yml = .github\workflows\azure-dev.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
