@@ -7,6 +7,7 @@ var config = builder.Configuration;
 Console.WriteLine($"\n Aspire Start, Launch Type: {config["LaunchType"]}\n");
 
 var backend = builder.AddProject<Projects.YoutubeSummarizer_Backend>("backend")
+    .WithExternalHttpEndpoints()
     .WithEnvironment("OpenAI__Endpoint", config["OpenAI:Endpoint"])
     .WithEnvironment("OpenAI__ApiKey", config["OpenAI:ApiKey"])
     .WithEnvironment("OpenAI__DeploymentName", config["OpenAI:DeploymentName"]);
