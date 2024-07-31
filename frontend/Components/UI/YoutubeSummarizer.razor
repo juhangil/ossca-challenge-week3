@@ -7,25 +7,38 @@
 
 <h3>YoutubeSummarizer</h3>
 
-<input id="youtube-link" @bind=inputURL @bind:after=SetYoutubeEmbedPlayer />
+<div class="continer" id="main">
+    <div class="col">
+        <label for="youtube-link" class="form-label"><strong>YouTube Link</strong></label>
+        <input id="youtube-link" @bind=inputURL @bind:after=SetYoutubeEmbedPlayer />
+    </div>
 
-<iframe id="ytplayer" type="text/html" width="640" height="360"
-        src=@youtubePlayerURL
-        frameborder="0"></iframe>
+    <div class="col">
+        <iframe id="ytplayer" type="text/html" width="900px" height="510px"
+                src=@youtubePlayerURL
+                frameborder="0"></iframe>
+    </div>
 
-<select id="video-language-code" @bind=videoLanguageCode>
-    <option value="en" selected>English</option>
-    <option value="ko">Korean</option>
-</select>
+    <div class="col">
+        <label for="video-language-code" class="form-label"><strong>Video is</strong></label>
+        <select id="video-language-code" @bind=videoLanguageCode>
+            <option value="en" selected>English</option>
+            <option value="ko">Korean</option>
+        </select>
 
-<select id="summary-language-code" @bind=summaryLanguageCode>
-    <option value="en" selected>English</option>
-    <option value="ko">Korean</option>
-</select>
+        <label for="summary-language-code" class="form-label"><strong>to Summary</strong></label>
+        <select id="summary-language-code" @bind=summaryLanguageCode>
+            <option value="en" selected>English</option>
+            <option value="ko">Korean</option>
+        </select>
 
-<button id="summary" @onclick=SummarizeAsync>Summary</button>
+        <button id="summary" @onclick=SummarizeAsync>Summary</button>
+    </div>
 
-<textarea id="result" @bind=summaryResult></textarea>
+    <div class="col">
+        <textarea id="result" @bind=summaryResult></textarea>
+    </div>
+</div>
 
 @code {
     private static readonly string YOUTUBE_EMBED_URL = "https://www.youtube.com/embed/";
