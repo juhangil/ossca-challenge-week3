@@ -487,3 +487,4 @@ $RECYCLE.BIN/
 *.bak
 YoutubeSummarizer.AppHost/appsettings.json
 YoutubeSummarizer.AppHost/appsettings.Development.json
+.azure
