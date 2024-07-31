@@ -1,4 +1,4 @@
-﻿using YoutubeSummarizer.Model;
+﻿using YoutubeSummarizer.ServiceDefaults.APICommon;
 
 namespace YoutubeSummarizer.Backend.Services;
 

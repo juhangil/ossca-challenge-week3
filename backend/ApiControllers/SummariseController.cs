@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using YoutubeSummarizer.Backend.Services;
-using YoutubeSummarizer.Model;
+using YoutubeSummarizer.ServiceDefaults.APICommon;
 
 namespace YoutubeSummarizer.Backend.ApiControllers;
 
 [ApiController]
-[Route("[controller]")]
-public class SummarizeController(ILogger<SummarizeController> logger,
+[Route(ApiEndpoints.Summarise)]
+public class SummariseController(ILogger<SummariseController> logger,
                             IYoutubeSummarizeService summarizer) : ControllerBase
 {
-    private readonly ILogger<SummarizeController> _logger = logger
+    private readonly ILogger<SummariseController> _logger = logger
         ?? throw new ArgumentNullException(nameof(logger), Errors.NULL_ERROR);
 
     private readonly IYoutubeSummarizeService _summarizer = summarizer

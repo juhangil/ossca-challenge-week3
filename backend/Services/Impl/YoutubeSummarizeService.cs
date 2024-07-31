@@ -1,5 +1,7 @@
-﻿using YoutubeSummarizer.Model;
+﻿using YoutubeSummarizer.ServiceDefaults.APICommon;
+
 using Aliencube.YouTubeSubtitlesExtractor.Abstractions;
+
 using Azure.AI.OpenAI;
 using OpenAI.Chat;
 
@@ -51,7 +53,7 @@ public class YoutubeSummarizeService : IYoutubeSummarizeService
             new UserChatMessage(caption)
         };
 
-        var response = await chatClient.CompleteChatAsync(chatMessage, chatOptions).ConfigureAwait(false);
+        var response = await chatClient.CompleteChatAsync(chatMessage, chatOptions);
         var summary = response.Value.Content[0].Text;
 
         return summary;

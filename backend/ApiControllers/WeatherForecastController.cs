@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using YoutubeSummarizer.Model;
+using YoutubeSummarizer.ServiceDefaults.APICommon;
 
 namespace YoutubeSummarizer.Backend.ApiControllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route(ApiEndpoints.WeatherForecast)]
 public class WeatherForecastController(ILogger<WeatherForecastController> logger) : ControllerBase
 {
     private readonly ILogger<WeatherForecastController> _logger = logger

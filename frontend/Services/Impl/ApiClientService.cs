@@ -1,4 +1,4 @@
-﻿using YoutubeSummarizer.Model;
+﻿using YoutubeSummarizer.ServiceDefaults.APICommon;
 
 namespace YoutubeSummarizer.Frontend.Services.Impl;
 
@@ -9,11 +9,11 @@ public class ApiClientService(HttpClient http) : IApiClientService
 
     public async Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync()
     {
-        using (var response = await _http.GetAsync("weatherforecast").ConfigureAwait(false))
+        using (var response = await _http.GetAsync(ApiEndpoints.WeatherForecast))
         {
             var forecast = await response.Content
-                .ReadFromJsonAsync<IEnumerable<WeatherForecast>>()
-                .ConfigureAwait(false);
+                                    .ReadFromJsonAsync<IEnumerable<WeatherForecast>>()
+                                    .ConfigureAwait(false);
 
             return forecast ?? Enumerable.Empty<WeatherForecast>();
         }
@@ -28,9 +28,10 @@ public class ApiClientService(HttpClient http) : IApiClientService
             VideoLanguageCode = videoLanguageCode,
             SummaryLanguageCode = summaryLanguageCode
         };
-        using(var response = await _http.PostAsJsonAsync("summarize", req).ConfigureAwait(false))
+        using (var response = await _http.PostAsJsonAsync(ApiEndpoints.Summarise, req))
         {
-            summary = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            summary = await response.Content.ReadAsStringAsync()
+                                        .ConfigureAwait(false);
         }
         return summary;
     }

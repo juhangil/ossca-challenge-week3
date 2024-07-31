@@ -5,5 +5,5 @@ Accept: application/json
 
 ###
 
-POST {{hostaddress}}/summarize/
+POST {{hostaddress}}/summarise/
 Accept: text/plain

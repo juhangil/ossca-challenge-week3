@@ -1,4 +1,4 @@
-﻿namespace YoutubeSummarizer.Model;
+﻿namespace YoutubeSummarizer.ServiceDefaults.APICommon;
 
 public class WeatherForecast
 {
@@ -6,9 +6,9 @@ public class WeatherForecast
 
     public int TemperatureC { get; set; }
 
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
     public string? Summary { get; set; }
+
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
 
 public class SummaryRequest
